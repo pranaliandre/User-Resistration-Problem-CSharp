@@ -51,6 +51,20 @@ namespace User_Registration_Problem_CSharp
             var regexExpr = @"^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$";
             return this.validationCheck(regexExpr, emailAddress);
         }
+
+        //method to take mobile number from user
+        public string inputMobileNumber()
+        {
+            Console.Write("Enter Mobile Number: ");//taking mobile number from user 
+            String mobileNumber = Console.ReadLine();
+            return mobileNumber;
+        }
+        //method to validate Mobile number
+        public string validationMobileNumber(string emailAddress)
+        {
+            var regexExpr = @"^([0-9]{2}[ ]{1}[0-9]{10})$";
+            return this.validationCheck(regexExpr, emailAddress);
+        }
         static void Main(string[] args)
         {
             Program user = new Program();
@@ -61,6 +75,8 @@ namespace User_Registration_Problem_CSharp
             Console.WriteLine($"Last name {user.validationName(lastName)}");
             string emailAddress = user.inputEmailAddress();
             Console.WriteLine($"Email address {user.validationEmailAddress(emailAddress)}");
+            string mobileNumber = user.inputMobileNumber();
+            Console.WriteLine($"Mobile Number {user.validationMobileNumber(mobileNumber)}");
         }
     }
 }
