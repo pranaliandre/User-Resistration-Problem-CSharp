@@ -91,7 +91,6 @@ namespace User_Registration_Problem_CSharp
             string mobileNumber = user.inputMobileNumber();
             Console.WriteLine($"Mobile Number {user.validationMobileNumber(mobileNumber)}");
             string password = user.inputPassword();
-            Console.WriteLine($"Password {user.validationPassword(password)}");
         }
     }
 }
