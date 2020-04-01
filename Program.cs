@@ -75,7 +75,7 @@ namespace User_Registration_Problem_CSharp
         //method to validate password minimum 8 charachter
         public string validationPassword(string password)
         {
-            var regexExpr = @"[a-z]{8,}";
+            var regexExpr = @"^^(?=.*[A-Z])(.{8,})$";
             return this.validationCheck(regexExpr, password);
         }
         static void Main(string[] args)
