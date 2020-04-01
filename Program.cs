@@ -65,6 +65,19 @@ namespace User_Registration_Problem_CSharp
             var regexExpr = @"^([0-9]{2}[ ]{1}[0-9]{10})$";
             return this.validationCheck(regexExpr, emailAddress);
         }
+        //method to take password from user
+        public string inputPassword()
+        {
+            Console.Write("Enter password: ");//taking password from user 
+            String password = Console.ReadLine();
+            return password;
+        }
+        //method to validate password minimum 8 charachter
+        public string validationPassword(string password)
+        {
+            var regexExpr = @"[a-z]{8,}";
+            return this.validationCheck(regexExpr, password);
+        }
         static void Main(string[] args)
         {
             Program user = new Program();
@@ -77,6 +90,8 @@ namespace User_Registration_Problem_CSharp
             Console.WriteLine($"Email address {user.validationEmailAddress(emailAddress)}");
             string mobileNumber = user.inputMobileNumber();
             Console.WriteLine($"Mobile Number {user.validationMobileNumber(mobileNumber)}");
+            string password = user.inputPassword();
+            Console.WriteLine($"Password {user.validationPassword(password)}");
         }
     }
 }
